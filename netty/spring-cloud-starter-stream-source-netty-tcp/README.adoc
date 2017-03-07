@@ -1,0 +1,49 @@
+//tag::ref-doc[]
+= Netty TCP
+This is a netty based `tcp` source that acts as a server and allows a remote party to connect to it and submit data over a raw tcp socket.
+
+TCP is a streaming protocol and some mechanism is needed to frame messages on the wire. A number of decoders from Netty are supported.
+
+Messages produced by the Netty TCP source application have a `byte[]` payload.
+
+== Options
+
+//tag::configuration-properties[]
+$$netty.tcp.address$$:: $$<documentation missing>$$ *($$String$$, default: `$$localhost$$`)*
+$$netty.tcp.decoder$$:: $$<documentation missing>$$ *($$Decoder$$, default: `$$<none>$$`, possible values: `LENGTH`,`LINE`,`FIXED_FRAME_LENGTH`)*
+$$netty.tcp.initial-bytes-to-strip$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.length-adjustment$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.length-field-length$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.length-field-offset$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.max-frame-length$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.max-line-length$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.port$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$0$$`)*
+$$netty.tcp.selector-count$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$2$$`)*
+$$netty.tcp.shutdown-quiet-period$$:: $$<documentation missing>$$ *($$Long$$, default: `$$2$$`)*
+$$netty.tcp.shutdown-timeout$$:: $$<documentation missing>$$ *($$Long$$, default: `$$1000$$`)*
+$$netty.tcp.socket-backlog$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$100$$`)*
+$$netty.tcp.socket-keepalive$$:: $$<documentation missing>$$ *($$Boolean$$, default: `$$false$$`)*
+$$netty.tcp.socket-linger$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$10000$$`)*
+$$netty.tcp.socket-reuse-address$$:: $$<documentation missing>$$ *($$Boolean$$, default: `$$true$$`)*
+$$netty.tcp.socket-timeout$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$20000$$`)*
+$$netty.tcp.tcp-no-delay$$:: $$<documentation missing>$$ *($$Boolean$$, default: `$$true$$`)*
+$$netty.tcp.text-output$$:: $$<documentation missing>$$ *($$Boolean$$, default: `$$false$$`)*
+$$netty.tcp.worker-thread-count$$:: $$<documentation missing>$$ *($$Integer$$, default: `$$4$$`)*
+//end::configuration-properties[]
+
+== Available Decoders
+
+.Text and Binary Data
+
+LINE:: text terminated by a carriage return
+LENGTH: data preceded by a length field
+FIXED_FRAME_LENGTH: data chunks by a fixed frame length
+
+//end::ref-doc[]
+== Build
+
+```
+$> mvn package
+```
+
+The "decoder" property determines the message format (no default is provided).
