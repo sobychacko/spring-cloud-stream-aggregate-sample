@@ -81,7 +81,15 @@ This sends 100 binary messages to the Netty TCP server based on the fictional bi
 
 You should see all those messages sent in the log sink console. 
 
+### Running Line based data to the Netty TCP Server
 
+java -jar target/netty-ingester-aggregate-kafka-10-1.0.0.BUILD-SNAPSHOT.jar --netty.tcp.port=29001 --netty.tcp.decoder=LINE --netty.tcp.maxLineLength=256 --spring.cloud.stream.bindings.output.destination=fox --payload.deserializer.text=true
+
+On another terminal do the following:
+
+echo "hello netty tcp source" | nc localhost 29001
+
+You should see this message coming through the log sink console
 
 
 
