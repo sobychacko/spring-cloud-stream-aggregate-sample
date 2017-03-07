@@ -1,0 +1,6 @@
+# Netty TCP Source
+
+To learn more about this application and the supported properties, please review the following link.
+
+## TCP Sources
+include::spring-cloud-starter-stream-source-netty-tcp/README.adoc[]
