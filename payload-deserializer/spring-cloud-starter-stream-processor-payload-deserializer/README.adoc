@@ -1,5 +1,6 @@
 //tag::ref-doc[]
 = Payload Deserializer Processor
+
 Use the payload deserializer app in a stream to deserialize a Message's content or structure.
 
 The end user app is expected to provide a Deserializer bean. A default no-op deserializer is provided.
