@@ -1,5 +1,6 @@
 //tag::ref-doc[]
 = Netty TCP
+
 This is a netty based `tcp` source that acts as a server and allows a remote party to connect to it and submit data over a raw tcp socket.
 
 TCP is a streaming protocol and some mechanism is needed to frame messages on the wire. A number of decoders from Netty are supported.
