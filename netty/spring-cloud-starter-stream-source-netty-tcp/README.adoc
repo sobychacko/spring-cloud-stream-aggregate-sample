@@ -36,8 +36,8 @@ $$netty.tcp.worker-thread-count$$:: $$<documentation missing>$$ *($$Integer$$, d
 .Text and Binary Data
 
 LINE:: text terminated by a carriage return
-LENGTH: data preceded by a length field
-FIXED_FRAME_LENGTH: data chunks by a fixed frame length
+LENGTH:: data preceded by a length field
+FIXED_FRAME_LENGTH:: data chunks by a fixed frame length
 
 //end::ref-doc[]
 == Build
